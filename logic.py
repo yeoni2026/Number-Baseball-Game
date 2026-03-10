@@ -5,7 +5,7 @@
 #ball: 숫자는 맞지만 위치가 다를 때
 #out 처리 -> 0S 0B
 import pygame
-import pygame_gui
+
 
 #S검사후-> S를 제외한 문자를 B검사
 def compare(answer, correct_answer):
@@ -26,5 +26,3 @@ def compare(answer, correct_answer):
 
 
 print(compare("4321", "1234"))
-
-
