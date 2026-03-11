@@ -1,13 +1,24 @@
-#메인에서 함수를 부름->제너레이터가 숫자 생성-> 입력에서 숫자를 받음-> 입력받은 숫자를 로직 매개변수에 넘김->내가 그 숫자를 제너레이터에서 생성한
-#답과 비교하여 출력형식 0S 0B를 반환함.
-#비교방법: 4자리수 answer를 제너레이터가 만든 정답 변수와 비교 -> strike, ball 계산
-#strike: 자리와 숫자가 완전히 일치 할때
-#ball: 숫자는 맞지만 위치가 다를 때
-#out 처리 -> 0S 0B
+
 import pygame
 import pygame_gui
+quiz_len = 4
+def before_check(answer):
+    #자릿수를 꽉안채운 경우나, 공백, 숫자가 아닌 경우도 false
+    if not(len(answer) == quiz_len and answer.isdigit()): #isdigit함수는 공백, 문자 => 숫자가 아닌 모든 문자를 제외시킴
+        print("answer is too short or too big or empty!")
+        return False
+    #단어 중복 검사. 4자리 숫자는 각각 다른 숫자여야함.
+    for i in range(0, len(answer)):
+        for j in range(i +1, len(answer)):
+            if(answer[i] == answer[j]):
+                print("dupicated number!")
+                return False
+                
+    print("pass")
+    return True
 
-#S검사후-> S를 제외한 문자를 B검사
+
+
 def compare(answer, correct_answer):
     s = 0
     b = 0
@@ -26,5 +37,13 @@ def compare(answer, correct_answer):
 
 
 print(compare("4321", "1234"))
+print(before_check("1130"))
+print(before_check("4234"))
+print(before_check("   "))
+print(before_check(""))
+print(before_check("00000"))
+
+
+
 
 
