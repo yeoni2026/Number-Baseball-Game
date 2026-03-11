@@ -1,6 +1,6 @@
 
 import pygame
-import pygame_gui
+
 quiz_len = 4
 def before_check(answer):
     #자릿수를 꽉안채운 경우나, 공백, 숫자가 아닌 경우도 false
@@ -18,7 +18,6 @@ def before_check(answer):
     return True
 
 
-
 def compare(answer, correct_answer):
     s = 0
     b = 0
@@ -34,8 +33,3 @@ def compare(answer, correct_answer):
             b += 1
 
     return f"{s}S {b}B"
-
-
-
-
-
