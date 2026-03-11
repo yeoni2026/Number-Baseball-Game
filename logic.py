@@ -36,14 +36,6 @@ def compare(answer, correct_answer):
     return f"{s}S {b}B"
 
 
-print(compare("4321", "1234"))
-print(before_check("1130"))
-print(before_check("4234"))
-print(before_check("   "))
-print(before_check(""))
-print(before_check("00000"))
-
-
 
 
 
