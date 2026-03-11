@@ -11,12 +11,11 @@ def before_check(answer):
     for i in range(0, len(answer)):
         for j in range(i +1, len(answer)):
             if(answer[i] == answer[j]):
-                print("dupicated number!")
+                print("duplicated number!")
                 return False
                 
     print("pass")
     return True
-
 
 def compare(answer, correct_answer):
     s = 0
